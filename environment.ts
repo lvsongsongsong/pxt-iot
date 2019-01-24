@@ -38,7 +38,7 @@ enum BME280Type {
     //% block="pressure(hPa)" enumval=2
     BME280_pressure,
 
-    //% block="altitude(M)" enumval=2
+    //% block="altitude(M)" enumval=3
     BME280_altitude,
 }
 
