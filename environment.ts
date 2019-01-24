@@ -691,7 +691,7 @@ namespace Environment {
    * Returns altitude in meters based on pressure at sea level. (absolute altitude)
    */
     //% weight=40 blockGap=28 blockId="bme280_altitude" block="altitude(M)"
-    export function BME280_altitude(): number {
+    function BME280_altitude(): number {
         startWeatherMonitoring();
 
         let pressRegM = readBMEReg(pressMSB, NumberFormat.UInt16BE)
