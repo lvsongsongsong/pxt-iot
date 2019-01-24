@@ -621,9 +621,9 @@ namespace Environment {
     }
 
     /**
-     * Function used for simulator, actual implementation is in weatherbit.cpp
+     * Function used for simulator, actual implementation is in bme280.cpp
      */
-    //% shim=weatherbit::compensatePressure
+    //% shim=Environment::compensatePressure
     function compensatePressure(pressRegVal: number, tFine: number, compensation: Buffer) {
         // Fake function for simulator
         return 0
@@ -643,9 +643,9 @@ namespace Environment {
     }
 
     /**
-     * Function used for simulator, actual implementation is in weatherbit.cpp
+     * Function used for simulator, actual implementation is in bme280.cpp
      */
-    //% shim=weatherbit::calcAltitude
+    //% shim=Environment::calcAltitude
     function calcAltitude(pressRegVal: number, tFine: number, compensation: Buffer) {
         // Fake function for simulator
         return 0
