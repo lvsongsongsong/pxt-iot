@@ -9,6 +9,7 @@ using namespace pxt;
 #define PXT_BUFFER_DATA(buffer) buffer->payload
 #endif
 
+//% weight=90 color=#ff7a4b icon="\uf0ee" block="Science"
 namespace Environment {
     
 
