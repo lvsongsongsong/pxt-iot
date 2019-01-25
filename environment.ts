@@ -3,7 +3,7 @@
 /**
  * Custom blocks
  */
-//% weight=90 color=#ff7a4b icon="\uf5d2"
+//% weight=90 color=#ff7a4b icon="\uf382"
 namespace Environment {
 
 
