@@ -4,46 +4,6 @@
  */
 
 
-enum DHT11Type {
-    //% block="temperature(℃)" enumval=0
-    DHT11_temperature_C,
-
-    //% block="temperature(℉)" enumval=1
-    DHT11_temperature_F,
-
-    //% block="humidity(0~100)" enumval=2
-    DHT11_humidity,
-}
-
-
-enum Distance_Unit {
-    //% block="mm" enumval=0
-    Distance_Unit_mm,
-
-    //% block="cm" enumval=1
-    Distance_Unit_cm,
-
-    //% block="inch" enumval=2
-    Distance_Unit_inch,
-}
-
-
-enum BME280Type {
-    //% block="temperature(℃)" enumval=0
-    BME280_temperature_C,
-
-    //% block="humidity(0~100)" enumval=1
-    BME280_humidity,
-
-    //% block="pressure(hPa)" enumval=2
-    BME280_pressure,
-
-    //% block="altitude(M)" enumval=3
-    BME280_altitude,
-}
-
-
-
 
 /**
  * Custom blocks
@@ -51,7 +11,47 @@ enum BME280Type {
 //% weight=90 color=#ff7a4b icon="\uf0ee"
 namespace Environment {
 
-    
+
+    export enum DHT11Type {
+        //% block="temperature(℃)" enumval=0
+        DHT11_temperature_C,
+
+        //% block="temperature(℉)" enumval=1
+        DHT11_temperature_F,
+
+        //% block="humidity(0~100)" enumval=2
+        DHT11_humidity,
+    }
+
+
+    export enum Distance_Unit {
+        //% block="mm" enumval=0
+        Distance_Unit_mm,
+
+        //% block="cm" enumval=1
+        Distance_Unit_cm,
+
+        //% block="inch" enumval=2
+        Distance_Unit_inch,
+    }
+
+
+    export enum BME280Type {
+        //% block="temperature(℃)" enumval=0
+        BME280_temperature_C,
+
+        //% block="humidity(0~100)" enumval=1
+        BME280_humidity,
+
+        //% block="pressure(hPa)" enumval=2
+        BME280_pressure,
+
+        //% block="altitude(M)" enumval=3
+        BME280_altitude,
+    }
+
+
+
 
     // keep track of services
     //let rainMonitorStarted = false;
@@ -356,6 +356,26 @@ namespace Environment {
         );
         lightintensity = voltage;
         return Math.round(lightintensity)
+    }
+
+
+    /**
+    * TODO: get water level(0~100)
+    * @param waterlevelpin describe parameter here, eg: AnalogPin.P3
+    */
+    //% blockId="readWaterLevel" block="value of water level(0~100) at pin %waterlevelpin"
+    export function ReadWaterLevel(waterlevelpin: AnalogPin): number {
+        let voltage = 0;
+        let waterlevel = 0;
+        voltage = pins.map(
+            pins.analogReadPin(waterlevelpin),
+            0,
+            700,
+            0,
+            100
+        );
+        waterlevel = voltage;
+        return Math.round(waterlevel)
     }
 
 
