@@ -116,10 +116,10 @@ namespace Environment {
 
     /**
      * TODO: get dust(μg/m³) 
-     * @param vLED describe parameter here, eg: DigitalPin.P9
-     * @param vo describe parameter here, eg: AnalogPin.P10
+     * @param vLED describe parameter here, eg: DigitalPin.P16
+     * @param vo describe parameter here, eg: AnalogPin.P1
      */
-    //% blockId="readdust" block="value of dust(μg/m³) at vLED %vLED| vo %vo"
+    //% blockId="readdust" block="value of dust(μg/m³) at LED %vLED| out %vo"
     export function ReadDust(vLED: DigitalPin, vo: AnalogPin): number {
         let voltage = 0;
         let dust = 0;
@@ -145,8 +145,10 @@ namespace Environment {
 
 
     /**
-    * get Ultrasonic(sonar:bit) distance 
-    */
+     * TODO: get Ultrasonic(sonar:bit) distance
+     * @param distance_unit describe parameter here, eg: 1
+     * @param pin describe parameter here, eg: DigitalPin.P16
+     */
     //% blockId=readsonarbit block="Ultrasonic distance in unit %distance_unit |at|pin %pin"
     export function sonarbit_distance(distance_unit: Distance_Unit, pin: DigitalPin): number {
 
@@ -185,7 +187,7 @@ namespace Environment {
 
     /**
     * TODO: get TMP36 Temperature(℃)
-    * @param temppin describe parameter here, eg: AnalogPin.P0
+    * @param temppin describe parameter here, eg: AnalogPin.P1
     */
     //% blockId="readtemp" block="read temperature(℃) at pin %temppin"
 
@@ -207,7 +209,7 @@ namespace Environment {
 
     /**
      * TODO: get DHT11
-     * @param dht11pin describe parameter here, eg: DigitalPin.P13     */
+     * @param dht11pin describe parameter here, eg: DigitalPin.P15     */
     //% blockId="readdht11" block="value of dht11 %dht11type| at pin %dht11pin"
     export function temperature(dht11type: DHT11Type, dht11pin: DigitalPin): number {
         pins.digitalWritePin(dht11pin, 0)
@@ -274,7 +276,7 @@ namespace Environment {
 
     /**
     * TODO: get pm2.5(μg/m³)
-    * @param pm25pin describe parameter here, eg: DigitalPin.P11
+    * @param pm25pin describe parameter here, eg: DigitalPin.P14
     */
     //% blockId="readpm25" block="value of pm2.5(μg/m³) at pin %pm25pin"
     export function ReadPM25(pm25pin: DigitalPin): number {
@@ -295,7 +297,7 @@ namespace Environment {
 
     /**
     * TODO: get pm10(μg/m³)
-    * @param pm10pin describe parameter here, eg: DigitalPin.P12     */
+    * @param pm10pin describe parameter here, eg: DigitalPin.P13     */
     //% blockId="readpm10" block="value of pm10(μg/m³) at pin %pm10pin"
     export function ReadPM10(pm10pin: DigitalPin): number {
         let pm10 = 0
@@ -316,7 +318,7 @@ namespace Environment {
 
     /**
     * TODO: get soil moisture(0~100)
-    * @param soilmoisturepin describe parameter here, eg: AnalogPin.P2
+    * @param soilmoisturepin describe parameter here, eg: AnalogPin.P1
     */
     //% blockId="readsoilmoisture" block="value of soil moisture(0~100) at pin %soilhumiditypin"
     export function ReadSoilHumidity(soilmoisturepin: AnalogPin): number {
@@ -336,7 +338,7 @@ namespace Environment {
 
     /**
     * TODO: get light intensity(0~100)
-    * @param lightintensitypin describe parameter here, eg: AnalogPin.P3
+    * @param lightintensitypin describe parameter here, eg: AnalogPin.P1
     */
     //% blockId="readlightintensity" block="value of light intensity(0~100) at pin %lightintensitypin"
     export function ReadLightIntensity(lightintensitypin: AnalogPin): number {
@@ -356,7 +358,7 @@ namespace Environment {
 
     /**
     * TODO: get water level(0~100)
-    * @param waterlevelpin describe parameter here, eg: AnalogPin.P3
+    * @param waterlevelpin describe parameter here, eg: AnalogPin.P1
     */
     //% blockId="readWaterLevel" block="value of water level(0~100) at pin %waterlevelpin"
     export function ReadWaterLevel(waterlevelpin: AnalogPin): number {
@@ -377,7 +379,7 @@ namespace Environment {
 
     /**
     * TODO: get wind speed(m/s)
-    * @param windspeedpin describe parameter here, eg: AnalogPin.P4
+    * @param windspeedpin describe parameter here, eg: AnalogPin.P1
     */
     //% blockId="readwindspeed" block="value of wind speed(m/s) at pin %windspeedpin"
     export function ReadWindSpeed(windspeedpin: AnalogPin): number {
