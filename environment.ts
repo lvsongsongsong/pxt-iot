@@ -1,10 +1,3 @@
-/**
- * Use this file to define custom functions and blocks.
- * Read more at https://www.elecfreaks.com
- */
-
-
-
 
 
 /**
@@ -614,7 +607,7 @@ namespace Environment {
 
         // Compensate and return pressure
         let bme280_pressure = compensatePressure((pressRegM << 4) | (pressRegL >> 4), tFine, digPBuf)
-        return Math.idiv(bme280_pressure, 25600)
+        return Math.idiv(bme280_pressure, 25600) - 30
     }
 
     /**
